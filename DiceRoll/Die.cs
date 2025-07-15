@@ -37,7 +37,21 @@ public class Die
         }
         NumberOfSides = numSides;
         // Forces the die to start at a random face value when created.
-        //Roll();
+        Roll();
+    }
+    /// <summary>
+    /// Simulates rolling the die and returns the resulting face value.
+    /// </summary>
+    /// <remarks>The face value is determined by generating a random number between 1 and the number of sides
+    /// on the die. The result is stored in the <see cref="FaceValue"/> property.</remarks>
+    /// <returns>A byte representing the face value of the die after the roll. The value will be between 1 and <see
+    /// cref="NumberOfSides"/>, inclusive.</returns>
+
+    public byte Roll()
+    {
+        FaceValue = Convert.ToByte(rand.Next(1, NumberOfSides));
+
+        return FaceValue;
     }
 }
-// pushing this up to Github to fix the issue with the main branch
+
